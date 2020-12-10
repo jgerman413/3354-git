@@ -15,3 +15,4 @@ Git Resset is specifically used for upadating the index while git checkout is fo
 
 (f) What happens if you try to pull remote changes when there are uncommitted changes in your working directory?
 Git will give the following error message so you do not loose any vital code : "Cannot checkout as your working directory has uncommitted changes " 
+TEST
