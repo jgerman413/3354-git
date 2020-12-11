@@ -1,26 +1,28 @@
-File: Main.java
+class Main {
 
-public class Main
-{
-        public static void main(String args[])
-        {
-                try
-                {
-                        int result = addArguments(args);
-                        System.out.println(result);
-                }
-                catch(Exception e)
-                {
-                        System.err.println("Please provide integers to add ");
-                }
-        }
-        private static int addArguments(String[] args)
-        {
-                int sum = 0 ; // variable to store sum
-                for(int i=0; i < args.length; i++)// Loop to add all array element
-                {
-                        sum = sum + Integer.valueOf(args[i]); // compute sum
-                }
-                return sum; //return sum
-        }
+   public static void main(String[] args) {
+       try {
+       int result = addArguments(args);
+       System.out.println(result);
+       } catch (Exception e) {
+       System.err.println("Please provide two integers to add");
+       }
+   }
+
+   private static int addArguments(String[] args) {
+       int flag=0,index=0,sum=0;
+       if(args[0].equals("-"))
+       {
+           flag=1;
+           index=1;
+       }
+       for(int i=index;i<args.length;i++){
+           if(flag==0)
+               sum+=Integer.valueOf(args[i]) ;
+           if(flag==1)
+               sum-=Integer.valueOf(args[i]) ;
+
+       }
+       return sum;
+   }
 }
